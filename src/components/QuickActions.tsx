@@ -1,59 +1,65 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Upload, Share, Download, Calendar, Bell, Plus } from "lucide-react";
+import { Upload, Share, Download, Calendar, Bell, Plus, Sparkles } from "lucide-react";
 
 export const QuickActions = () => {
   return (
-    <Card className="border-2 border-amber-200 bg-white shadow-lg">
-      <CardHeader>
-        <CardTitle className="text-gray-900 text-lg">Quick Actions</CardTitle>
+    <Card className="border-3 border-amber-300 bg-gradient-to-br from-white to-amber-50 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+      <CardHeader className="bg-gradient-to-r from-amber-100 to-orange-100 rounded-t-lg">
+        <CardTitle className="text-amber-900 text-xl font-bold">Quick Actions</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3">
-        <Button className="w-full justify-start bg-amber-800 hover:bg-amber-900 text-white">
-          <Upload className="w-4 h-4 mr-3" />
-          Upload Report
+      <CardContent className="space-y-4 pt-6">
+        <Button className="w-full justify-start bg-gradient-to-r from-amber-800 to-orange-800 hover:from-amber-900 hover:to-orange-900 text-white shadow-lg transform hover:scale-105 transition-all duration-200 py-3">
+          <Upload className="w-5 h-5 mr-3" />
+          <span className="font-semibold">Upload New Report</span>
         </Button>
         
-        <Button variant="outline" className="w-full justify-start border-amber-200 hover:bg-amber-50">
-          <Plus className="w-4 h-4 mr-3" />
-          Log Vitals
+        <Button variant="outline" className="w-full justify-start border-2 border-amber-300 hover:bg-amber-100 text-amber-800 font-semibold shadow-md transform hover:scale-105 transition-all duration-200 py-3">
+          <Plus className="w-5 h-5 mr-3" />
+          Log Daily Vitals
         </Button>
         
-        <Button variant="outline" className="w-full justify-start border-amber-200 hover:bg-amber-50">
-          <Calendar className="w-4 h-4 mr-3" />
-          Book Checkup
+        <Button variant="outline" className="w-full justify-start border-2 border-orange-300 hover:bg-orange-100 text-orange-800 font-semibold shadow-md transform hover:scale-105 transition-all duration-200 py-3">
+          <Calendar className="w-5 h-5 mr-3" />
+          Schedule Checkup
         </Button>
         
-        <Button variant="outline" className="w-full justify-start border-amber-200 hover:bg-amber-50">
-          <Share className="w-4 h-4 mr-3" />
+        <Button variant="outline" className="w-full justify-start border-2 border-amber-300 hover:bg-amber-100 text-amber-800 font-semibold shadow-md transform hover:scale-105 transition-all duration-200 py-3">
+          <Share className="w-5 h-5 mr-3" />
           Share with Doctor
         </Button>
         
-        <Button variant="outline" className="w-full justify-start border-amber-200 hover:bg-amber-50">
-          <Download className="w-4 h-4 mr-3" />
-          Export Data
+        <Button variant="outline" className="w-full justify-start border-2 border-orange-300 hover:bg-orange-100 text-orange-800 font-semibold shadow-md transform hover:scale-105 transition-all duration-200 py-3">
+          <Download className="w-5 h-5 mr-3" />
+          Export Health Data
         </Button>
         
-        <Button variant="outline" className="w-full justify-start border-amber-200 hover:bg-amber-50">
-          <Bell className="w-4 h-4 mr-3" />
-          Set Reminder
+        <Button variant="outline" className="w-full justify-start border-2 border-amber-300 hover:bg-amber-100 text-amber-800 font-semibold shadow-md transform hover:scale-105 transition-all duration-200 py-3">
+          <Bell className="w-5 h-5 mr-3" />
+          Set Health Reminder
         </Button>
         
-        {/* AI Assistant */}
-        <div className="mt-6 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
-          <div className="flex items-start space-x-3">
-            <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-              <span className="text-purple-600 font-bold">AI</span>
+        {/* Enhanced AI Assistant */}
+        <div className="mt-8 p-6 bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 rounded-2xl border-3 border-purple-300 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+          <div className="flex items-start space-x-4">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full flex items-center justify-center shadow-lg">
+              <Sparkles className="w-6 h-6 text-purple-700" />
             </div>
-            <div>
-              <h4 className="font-semibold text-purple-900 mb-1">Health Assistant</h4>
-              <p className="text-sm text-purple-700 mb-3">
-                "Based on your recent reports, I recommend scheduling an iron deficiency follow-up."
+            <div className="flex-1">
+              <h4 className="font-bold text-purple-900 mb-2 text-lg">AI Health Assistant</h4>
+              <p className="text-sm text-purple-800 mb-4 leading-relaxed font-medium">
+                "Based on your recent iron deficiency results, I recommend scheduling a follow-up with your doctor 
+                and adding spinach, lentils, and fortified cereals to your diet."
               </p>
-              <Button size="sm" className="bg-purple-600 hover:bg-purple-700 text-white">
-                View Recommendations
-              </Button>
+              <div className="flex space-x-3">
+                <Button size="sm" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold shadow-lg">
+                  View Recommendations
+                </Button>
+                <Button size="sm" variant="outline" className="border-purple-300 text-purple-700 hover:bg-purple-50 font-semibold">
+                  Ask AI
+                </Button>
+              </div>
             </div>
           </div>
         </div>
