@@ -12,6 +12,31 @@ import { QuickActions } from "@/components/QuickActions";
 import { SecurityBadge } from "@/components/SecurityBadge";
 
 const Index = () => {
+  const handleUploadReport = () => {
+    console.log("Upload report clicked");
+    // File upload functionality would go here
+  };
+
+  const handleConnectToDoctor = () => {
+    console.log("Connect to doctor clicked");
+    // Doctor connection functionality would go here
+  };
+
+  const handleDownloadSummary = () => {
+    console.log("Download health summary clicked");
+    // PDF generation functionality would go here
+  };
+
+  const handleSyncWithDoctor = () => {
+    console.log("Sync with doctor clicked");
+    // Doctor sync functionality would go here
+  };
+
+  const handleExportToWallet = () => {
+    console.log("Export to mobile wallet clicked");
+    // Mobile wallet export functionality would go here
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-25 to-amber-100">
       {/* Header Section */}
@@ -51,11 +76,18 @@ const Index = () => {
                 vaccination records to lab reports. Built specifically for women's health needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-amber-800 hover:bg-amber-900 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-200">
+                <Button 
+                  onClick={handleUploadReport}
+                  className="bg-amber-800 hover:bg-amber-900 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                >
                   <Upload className="w-6 h-6 mr-3" />
                   Upload Health Report
                 </Button>
-                <Button variant="outline" className="border-2 border-amber-800 text-amber-800 hover:bg-amber-50 px-10 py-4 rounded-xl font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-200">
+                <Button 
+                  onClick={handleConnectToDoctor}
+                  variant="outline" 
+                  className="border-2 border-amber-800 text-amber-800 hover:bg-amber-50 px-10 py-4 rounded-xl font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                >
                   <Link className="w-6 h-6 mr-3" />
                   Connect to Doctor
                 </Button>
@@ -73,6 +105,7 @@ const Index = () => {
               <div>
                 <div className="text-3xl font-bold text-amber-900">12</div>
                 <div className="text-amber-700 font-medium">Health Reports</div>
+                <div className="text-xs text-amber-600 mt-1">Digitally secured</div>
               </div>
               <div className="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center">
                 <FileText className="w-6 h-6 text-amber-800" />
@@ -85,6 +118,7 @@ const Index = () => {
               <div>
                 <div className="text-3xl font-bold text-orange-900">98%</div>
                 <div className="text-orange-700 font-medium">Health Score</div>
+                <div className="text-xs text-orange-600 mt-1">Excellent condition</div>
               </div>
               <div className="w-12 h-12 bg-orange-200 rounded-full flex items-center justify-center">
                 <Heart className="w-6 h-6 text-orange-800" />
@@ -97,6 +131,7 @@ const Index = () => {
               <div>
                 <div className="text-3xl font-bold text-amber-900">5</div>
                 <div className="text-amber-700 font-medium">Doctors Connected</div>
+                <div className="text-xs text-amber-600 mt-1">Trusted network</div>
               </div>
               <div className="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center">
                 <Activity className="w-6 h-6 text-amber-800" />
@@ -109,6 +144,7 @@ const Index = () => {
               <div>
                 <div className="text-3xl font-bold text-orange-900">100%</div>
                 <div className="text-orange-700 font-medium">Secure & Private</div>
+                <div className="text-xs text-orange-600 mt-1">End-to-end encrypted</div>
               </div>
               <div className="w-12 h-12 bg-orange-200 rounded-full flex items-center justify-center">
                 <Shield className="w-6 h-6 text-orange-800" />
@@ -127,31 +163,53 @@ const Index = () => {
                 <CardTitle className="flex items-center text-amber-900">
                   <Bell className="w-6 h-6 mr-3 text-amber-700" />
                   Smart Health Insights
+                  <span className="text-xs text-amber-600 ml-2 font-normal">AI-powered analysis</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 pt-6">
                 <div className="p-5 bg-gradient-to-r from-amber-100 to-orange-100 rounded-xl border-2 border-amber-300 shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-amber-200 rounded-full flex items-center justify-center">
-                      <Activity className="w-5 h-5 text-amber-800" />
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                      <img 
+                        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                        alt="Health progress" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <p className="text-amber-900 font-semibold">Weight increased by 1.4 kg in last 45 days - within healthy range.</p>
+                    <div>
+                      <p className="text-amber-900 font-semibold text-lg">Weight Progress Excellent</p>
+                      <p className="text-amber-700 text-sm">Weight increased by 1.4 kg in last 45 days - within healthy range.</p>
+                    </div>
                   </div>
                 </div>
                 <div className="p-5 bg-gradient-to-r from-red-100 to-orange-100 rounded-xl border-2 border-red-300 shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-red-200 rounded-full flex items-center justify-center">
-                      <Bell className="w-5 h-5 text-red-800" />
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                      <img 
+                        src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                        alt="Medical attention needed" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <p className="text-red-900 font-semibold">Your iron level is below average — iron-rich foods recommended.</p>
+                    <div>
+                      <p className="text-red-900 font-semibold text-lg">Iron Deficiency Alert</p>
+                      <p className="text-red-700 text-sm">Your iron level is below average — iron-rich foods recommended.</p>
+                    </div>
                   </div>
                 </div>
                 <div className="p-5 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl border-2 border-green-300 shadow-md hover:shadow-lg transition-shadow">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center">
-                      <Heart className="w-5 h-5 text-green-800" />
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                      <img 
+                        src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                        alt="Healthy vitals" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <p className="text-green-900 font-semibold">Excellent! Your BP readings are consistently normal this month.</p>
+                    <div>
+                      <p className="text-green-900 font-semibold text-lg">Blood Pressure Perfect</p>
+                      <p className="text-green-700 text-sm">Excellent! Your BP readings are consistently normal this month.</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -180,6 +238,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-amber-900/40"></div>
                 <div className="absolute bottom-4 left-6">
                   <h3 className="text-white font-bold text-xl">Health Reminders</h3>
+                  <p className="text-amber-100 text-sm">Stay on track with your wellness</p>
                 </div>
               </div>
               <CardContent className="space-y-4 pt-6">
@@ -216,53 +275,75 @@ const Index = () => {
         </div>
 
         {/* Enhanced Integration Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <Card className="border-2 border-pink-300 bg-gradient-to-br from-white to-pink-50 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-pink-200 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Calendar className="w-8 h-8 text-pink-700" />
-              </div>
-              <h3 className="font-bold text-lg text-pink-900 mb-3">GynConnect</h3>
-              <p className="text-sm text-pink-700 leading-relaxed">Connect with gynecologists and track women's health consultations</p>
-            </CardContent>
-          </Card>
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-amber-900 mb-4 font-serif">Connected Health Ecosystem</h3>
+            <p className="text-amber-700 text-lg">Seamlessly integrate with specialized health services</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="border-2 border-pink-300 bg-gradient-to-br from-white to-pink-50 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                    alt="Gynecology care" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-bold text-lg text-pink-900 mb-3">GynConnect</h3>
+                <p className="text-sm text-pink-700 leading-relaxed">Connect with gynecologists and track women's health consultations</p>
+              </CardContent>
+            </Card>
 
-          <Card className="border-2 border-green-300 bg-gradient-to-br from-white to-green-50 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-200 to-emerald-200 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Bell className="w-8 h-8 text-green-700" />
-              </div>
-              <h3 className="font-bold text-lg text-green-900 mb-3">VaxAlert</h3>
-              <p className="text-sm text-green-700 leading-relaxed">Sync vaccination records and get timely immunization reminders</p>
-            </CardContent>
-          </Card>
+            <Card className="border-2 border-green-300 bg-gradient-to-br from-white to-green-50 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1524230572899-a752b3835840?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                    alt="Vaccination alerts" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-bold text-lg text-green-900 mb-3">VaxAlert</h3>
+                <p className="text-sm text-green-700 leading-relaxed">Sync vaccination records and get timely immunization reminders</p>
+              </CardContent>
+            </Card>
 
-          <Card className="border-2 border-blue-300 bg-gradient-to-br from-white to-blue-50 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Share className="w-8 h-8 text-blue-700" />
-              </div>
-              <h3 className="font-bold text-lg text-blue-900 mb-3">CareCircle</h3>
-              <p className="text-sm text-blue-700 leading-relaxed">Share health insights with family members and trusted caregivers</p>
-            </CardContent>
-          </Card>
+            <Card className="border-2 border-blue-300 bg-gradient-to-br from-white to-blue-50 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                    alt="Care circle" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-bold text-lg text-blue-900 mb-3">CareCircle</h3>
+                <p className="text-sm text-blue-700 leading-relaxed">Share health insights with family members and trusted caregivers</p>
+              </CardContent>
+            </Card>
 
-          <Card className="border-2 border-amber-300 bg-gradient-to-br from-white to-amber-50 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <FileText className="w-8 h-8 text-amber-700" />
-              </div>
-              <h3 className="font-bold text-lg text-amber-900 mb-3">HealthYojana</h3>
-              <p className="text-sm text-amber-700 leading-relaxed">Auto-fill health insurance and government scheme eligibility forms</p>
-            </CardContent>
-          </Card>
+            <Card className="border-2 border-amber-300 bg-gradient-to-br from-white to-amber-50 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                    alt="Health insurance" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-bold text-lg text-amber-900 mb-3">HealthYojana</h3>
+                <p className="text-sm text-amber-700 leading-relaxed">Auto-fill health insurance and government scheme eligibility forms</p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* Enhanced Footer Actions */}
         <div 
           className="bg-gradient-to-r from-amber-100 to-orange-100 rounded-3xl border-3 border-amber-300 shadow-2xl p-10 relative overflow-hidden"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundBlendMode: 'overlay'
@@ -272,18 +353,29 @@ const Index = () => {
           <div className="relative z-10">
             <div className="text-center mb-8">
               <h3 className="text-3xl font-bold text-amber-900 mb-4 font-serif">Ready to Take Control of Your Health?</h3>
-              <p className="text-lg text-amber-800 max-w-2xl mx-auto">Export your data, sync with healthcare providers, or download comprehensive health summaries.</p>
+              <p className="text-lg text-amber-800 max-w-2xl mx-auto">Export your data, sync with healthcare providers, or download comprehensive health summaries for your records.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button className="bg-amber-800 hover:bg-amber-900 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200">
+              <Button 
+                onClick={handleDownloadSummary}
+                className="bg-amber-800 hover:bg-amber-900 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+              >
                 <Download className="w-5 h-5 mr-3" />
                 Download Health Summary PDF
               </Button>
-              <Button variant="outline" className="border-2 border-amber-800 text-amber-800 hover:bg-amber-50 bg-white/90 px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200">
+              <Button 
+                onClick={handleSyncWithDoctor}
+                variant="outline" 
+                className="border-2 border-amber-800 text-amber-800 hover:bg-amber-50 bg-white/90 px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+              >
                 <Link className="w-5 h-5 mr-3" />
                 Sync with Doctor
               </Button>
-              <Button variant="outline" className="border-2 border-amber-800 text-amber-800 hover:bg-amber-50 bg-white/90 px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200">
+              <Button 
+                onClick={handleExportToWallet}
+                variant="outline" 
+                className="border-2 border-amber-800 text-amber-800 hover:bg-amber-50 bg-white/90 px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+              >
                 <Download className="w-5 h-5 mr-3" />
                 Export to Mobile Wallet
               </Button>
