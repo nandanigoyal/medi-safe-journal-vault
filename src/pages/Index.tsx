@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
-import { Upload, Calendar, Bell, Share, Download, FileText, Plus, Link, Heart, Activity, Shield, Calculator, Stethoscope, Pill, Scan, Camera, Eye } from "lucide-react";
+import { Upload, Calendar, Bell, Share, Download, FileText, Plus, Link, Heart, Activity, Shield, Calculator, Stethoscope, Pill, Scan, Camera, Eye, Database } from "lucide-react";
 import { useState } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
 
@@ -109,11 +109,17 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-stone-800 to-stone-900 rounded-xl flex items-center justify-center shadow-lg">
-                <FileText className="w-7 h-7 text-white" />
+              <div className="w-12 h-12 bg-gradient-to-br from-stone-800 to-amber-900 rounded-xl flex items-center justify-center shadow-lg"
+               style={{ color: 'hsl(25, 50%, 20%)' }}
+              >
+              
+                <Database className="w-7 h-7 text-white"
+                 />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-stone-900 font-serif">MediVault</h1>
+                <h1 className="text-3xl font-bold  font-serif"
+                 style={{ color: 'hsl(25, 50%, 20%)' }}
+                >MediVault</h1>
                 <p className="text-sm text-stone-700 font-medium">Your comprehensive health management system</p>
               </div>
             </div>
@@ -127,7 +133,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/20 to-stone-800/20 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-cream-500/20 to-amber-800/20 z-10"></div>
         <div 
           className="bg-cover bg-center bg-no-repeat py-20" 
           style={{
@@ -136,51 +142,55 @@ const Index = () => {
         >
           <div className="container mx-auto px-6 relative z-20">
             <div className="text-center mb-12 bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-stone-200">
-              <h2 className="text-5xl font-bold text-stone-900 mb-6 font-serif leading-tight">
-                Complete Medical Records Management
-              </h2>
+              <h2
+  className="text-5xl font-bold mb-6 font-serif leading-tight"
+  style={{ color: 'hsl(25, 50%, 20%)' }}
+>
+  Complete Medical Records Management
+</h2>
+
               <p className="text-xl text-stone-800 mb-8 max-w-4xl mx-auto leading-relaxed">
                 Store, organize and manage all your health records, prescriptions, lab reports, and medical history securely.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-6 gap-4 justify-center">
                 <Button 
                   onClick={handleUploadReport}
-                  className="bg-gradient-to-r from-stone-800 to-stone-900 hover:from-stone-900 hover:to-black text-white px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-amber-950 to-amber-600  px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   <Upload className="w-5 h-5 mr-2" />
                   Upload Reports
                 </Button>
                 <Button 
                   onClick={handleBMICalculator}
-                  className="bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-white px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-amber-950 to-amber-600  px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   <Calculator className="w-5 h-5 mr-2" />
                   Health Calculator
                 </Button>
                 <Button 
                   onClick={handlePrescriptions}
-                  className="bg-gradient-to-r from-stone-800 to-stone-900 hover:from-stone-900 hover:to-black text-white px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-amber-950 to-amber-600 px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   <Pill className="w-5 h-5 mr-2" />
                   Prescriptions
                 </Button>
                 <Button 
                   onClick={handleHealthRecords}
-                  className="bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-white px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-amber-950 to-amber-600 px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   <Stethoscope className="w-5 h-5 mr-2" />
                   Health Records
                 </Button>
                 <Button 
                   onClick={handleScans}
-                  className="bg-gradient-to-r from-stone-800 to-stone-900 hover:from-stone-900 hover:to-black text-white px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-amber-950 to-amber-600 px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   <Scan className="w-5 h-5 mr-2" />
                   X-rays & Scans
                 </Button>
                 <Button 
                   onClick={handleHealthMonitoring}
-                  className="bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-white px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-amber-950 to-amber-600 px-6 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   <Activity className="w-5 h-5 mr-2" />
                   Health Monitoring
@@ -191,13 +201,16 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-12"
+       style={{ color: 'hsl(25, 50%, 20%)' }}>
         {/* Upload Section */}
         <section id="upload-section" className="mb-16">
           <Card className="border-3 border-stone-300 bg-gradient-to-br from-white to-stone-50 shadow-xl">
             <CardHeader className="bg-gradient-to-r from-stone-100 to-stone-200 rounded-t-lg">
-              <CardTitle className="text-stone-900 text-2xl font-bold flex items-center">
-                <Upload className="w-7 h-7 mr-3 text-stone-800" />
+              <CardTitle className=" text-2xl font-bold flex items-center"
+               style={{ color: 'hsl(25, 50%, 15%)' }}>
+                <Upload className="w-7 h-7 mr-3 " 
+                 style={{ color: 'hsl(25, 50%, 20%)' }}/>
                 Upload Medical Documents
               </CardTitle>
             </CardHeader>
@@ -211,10 +224,11 @@ const Index = () => {
                       <div className="w-24 h-24 bg-gradient-to-br from-stone-200 to-stone-300 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <Upload className="w-12 h-12 text-stone-800" />
                       </div>
-                      <h3 className="text-3xl font-bold text-stone-900 mb-4">Drop your files here</h3>
-                      <p className="text-stone-800 mb-6 font-medium text-lg">Support for PDF, JPG, PNG files up to 25MB</p>
+                      <h3 className="text-3xl font-bold mb-4"
+                       style={{ color: 'hsl(25, 50%, 20%)' }}>Drop your files here</h3>
+                      <p className="text-amber-600 mb-6 font-medium text-lg">Support for PDF, JPG, PNG files up to 25MB</p>
                       <div className="flex gap-2 mb-4">
-                        <Button className="bg-stone-800 hover:bg-stone-900 text-white">
+                        <Button className="bg-amber-900 hover:bg-amber-700 text-white">
                           <FileText className="w-4 h-4 mr-2" />
                           Browse Files
                         </Button>
@@ -248,8 +262,9 @@ const Index = () => {
         <section id="bmi-section" className="mb-16">
           <Card className="border-3 border-stone-300 bg-gradient-to-br from-white to-stone-50 shadow-xl">
             <CardHeader className="bg-gradient-to-r from-stone-100 to-stone-200 rounded-t-lg">
-              <CardTitle className="text-stone-900 text-2xl font-bold flex items-center">
-                <Calculator className="w-7 h-7 mr-3 text-stone-800" />
+              <CardTitle className="text-2xl font-bold flex items-center">
+                <Calculator className="w-7 h-7 mr-3 text-stone-800" 
+                 style={{ color: 'hsl(25, 50%, 25%)' }}/>
                 Health Metrics Calculator
               </CardTitle>
             </CardHeader>
@@ -257,7 +272,8 @@ const Index = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* BMI Calculator */}
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-stone-900">BMI Calculator</h3>
+                  <h3 className="text-xl font-bold "
+                   style={{ color: 'hsl(25, 50%, 20%)' }}>BMI Calculator</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label className="text-stone-800 font-semibold mb-2 block">Weight (kg)</Label>
@@ -281,7 +297,7 @@ const Index = () => {
                   
                   <Button 
                     onClick={calculateBMI}
-                    className="w-full bg-gradient-to-r from-stone-800 to-stone-900 hover:from-stone-900 hover:to-black text-white py-4 text-lg font-semibold shadow-lg"
+                    className="w-full bg-gradient-to-r from-amber-800 to-stone-900  py-4 text-lg font-semibold shadow-lg"
                   >
                     Calculate BMI
                   </Button>
@@ -299,7 +315,8 @@ const Index = () => {
 
                 {/* Blood Pressure Calculator */}
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-stone-900">Blood Pressure</h3>
+                  <h3 className="text-xl font-bold "
+                   style={{ color: 'hsl(25, 50%, 20%)' }}>Blood Pressure</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label className="text-stone-800 font-semibold mb-2 block">Systolic</Label>
@@ -323,13 +340,13 @@ const Index = () => {
                   
                   <Button 
                     onClick={checkBloodPressure}
-                    className="w-full bg-gradient-to-r from-stone-800 to-stone-900 hover:from-stone-900 hover:to-black text-white py-4 text-lg font-semibold shadow-lg"
+                    className="w-full bg-gradient-to-r from-amber-800 to-stone-900  text-white py-4 text-lg font-semibold shadow-lg"
                   >
                     Check BP
                   </Button>
 
                   {bpResult && (
-                    <div className="p-6 bg-gradient-to-br from-stone-100 to-stone-200 rounded-xl border-2 border-stone-300 shadow-lg">
+                    <div className="p-6 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl border-2 border-amber-300 shadow-lg">
                       <div className="text-center">
                         <div className="text-lg text-stone-700 font-semibold">{bpResult}</div>
                       </div>
@@ -339,20 +356,24 @@ const Index = () => {
 
                 {/* Blood Sugar Calculator */}
                 <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-stone-900">Blood Sugar</h3>
+                  <h3 className="text-xl font-bold "
+                   style={{ color: 'hsl(25, 50%, 20%)' }}>Blood Sugar</h3>
                   <div>
-                    <Label className="text-stone-800 font-semibold mb-2 block">Sugar Level (mg/dL)</Label>
+                    <Label className=" font-semibold mb-2 block"
+                     style={{ color: 'hsl(25, 50%, 20%)' }}>Sugar Level (mg/dL)</Label>
                     <Input 
                       value={sugar}
                       onChange={(e) => setSugar(e.target.value)}
                       placeholder="90-100"
-                      className="border-stone-300 focus:border-stone-500 bg-white text-lg p-3"
+                      className="border-amber-300 focus:border-amber-500 bg-white text-lg p-3"
+                       style={{ color: 'hsl(25, 50%, 20%)' }}
                     />
                   </div>
                   
                   <Button 
                     onClick={checkBloodSugar}
-                    className="w-full bg-gradient-to-r from-stone-800 to-stone-900 hover:from-stone-900 hover:to-black text-white py-4 text-lg font-semibold shadow-lg"
+                    className="w-full bg-gradient-to-r from-amber-800 to-stone-900  text-white py-4 text-lg font-semibold shadow-lg"
+
                   >
                     Check Sugar
                   </Button>
@@ -372,9 +393,10 @@ const Index = () => {
 
         {/* Health Monitoring Section with Graph */}
         <section id="monitoring-section" className="mb-16">
-          <Card className="border-3 border-stone-300 bg-gradient-to-br from-white to-stone-50 shadow-xl">
-            <CardHeader className="bg-gradient-to-r from-stone-100 to-stone-200 rounded-t-lg">
-              <CardTitle className="text-stone-900 text-2xl font-bold flex items-center">
+          <Card className="border-3 border-amber-300 bg-gradient-to-br from-white to-amber-50 shadow-xl">
+            <CardHeader className="bg-gradient-to-r from-stone-50 to-stone-200 rounded-t-lg">
+              <CardTitle className=" text-2xl font-bold flex items-center"
+               style={{ color: 'hsl(25, 50%, 20%)' }}>
                 <Activity className="w-7 h-7 mr-3 text-stone-800" />
                 Health Monitoring Dashboard
               </CardTitle>
@@ -396,7 +418,7 @@ const Index = () => {
                           backgroundColor: '#F5F5F4', 
                           border: '2px solid #78716C',
                           borderRadius: '12px',
-                          boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
+                          boxShadow: '0 10px 25px rgba(107, 64, 35, 0.46)'
                         }} 
                       />
                       <Line type="monotone" dataKey="weight" stroke="#78716C" strokeWidth={3} dot={{ fill: '#78716C', strokeWidth: 2, r: 5 }} />
@@ -405,7 +427,8 @@ const Index = () => {
                   </ResponsiveContainer>
                 </div>
 
-                <div className="bg-gradient-to-br from-stone-50 to-stone-100 p-6 rounded-2xl border-2 border-stone-200 shadow-lg">
+                <div className="bg-gradient-to-br from-stone-50 to-stone-100 p-6 rounded-2xl border-2 border-stone-200 shadow-lg"
+                >
                   <h3 className="text-xl font-bold text-stone-900 mb-6 flex items-center">
                     <div className="w-3 h-3 bg-stone-600 rounded-full mr-3"></div>
                     Blood Sugar Levels
@@ -436,7 +459,8 @@ const Index = () => {
         <section id="prescriptions-section" className="mb-16">
           <Card className="border-3 border-stone-300 bg-gradient-to-br from-white to-stone-50 shadow-xl">
             <CardHeader className="bg-gradient-to-r from-stone-100 to-stone-200 rounded-t-lg">
-              <CardTitle className="text-stone-900 text-2xl font-bold flex items-center">
+              <CardTitle className=" text-2xl font-bold flex items-center"
+               style={{ color: 'hsl(25, 50%, 20%)' }}>
                 <Pill className="w-7 h-7 mr-3 text-stone-800" />
                 Prescription Management
               </CardTitle>
@@ -445,7 +469,8 @@ const Index = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-xl font-bold text-stone-900">Stored Prescriptions</h3>
+                    <h3 className="text-xl font-bold"
+                     style={{ color: 'hsl(25, 50%, 20%)' }}>Stored Prescriptions</h3>
                     <Button className="bg-stone-800 hover:bg-stone-900 text-white">
                       <Plus className="w-4 h-4 mr-2" />
                       Add New
@@ -518,22 +543,23 @@ const Index = () => {
         <section id="records-section" className="mb-16">
           <Card className="border-3 border-stone-300 bg-gradient-to-br from-white to-stone-50 shadow-xl">
             <CardHeader className="bg-gradient-to-r from-stone-100 to-stone-200 rounded-t-lg">
-              <CardTitle className="text-stone-900 text-2xl font-bold flex items-center">
-                <Stethoscope className="w-7 h-7 mr-3 text-stone-800" />
+              <CardTitle className="text-amber text-2xl font-bold flex items-center">
+                <Stethoscope className="w-7 h-7 mr-3 " 
+                 style={{ color: 'hsl(25, 50%, 20%)' }}/>
                 Health Records & Consultations
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-6">
-                  <h3 className="text-xl font-bold text-stone-900">Recent Consultations</h3>
+                  <h3 className="text-xl font-bold ">Recent Consultations</h3>
                   
                   <div className="space-y-4">
                     <div className="bg-gradient-to-r from-white to-stone-50 border-2 border-stone-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                       <div className="flex items-start space-x-4">
                         <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-stone-300">
                           <img 
-                            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            src="https://img.freepik.com/premium-photo/young-indian-girl-female-doctor_669954-15854.jpg"
                             alt="Dr. Sarah Johnson"
                             className="w-full h-full object-cover"
                           />
